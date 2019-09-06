@@ -1,34 +1,51 @@
-*{
-    background-color: red; 
+* {
+    background-color: red;
 }
-.imagen {
+.imagen{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-   
-  }
-  .one {
-    grid-column: 1 / 3;
-    grid-row: 1;
-  }
-  .two { 
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
-  }
-  .three {
-    grid-column: 1;
-    grid-row: 2 / 5;
-  }
-  .four {
-    grid-column: 3;
-    grid-row: 3;
-  }
-  .five {
-    grid-column: 2;
-    grid-row: 4;
-  }
-  .six {
-    grid-column: 3;
-    grid-row: 4;
-  }
+
+    justify-content: center;
+
+    grid-template: 100px 100px 100px/ 100px 100px 100px;
+    grid-gap: 5px;
+}
+
+.uno>span{
+    width: 100%;
+    height: 100%;
+
+    margin: 0; 
+}
+
+#example3>.one{
+    background: grey;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+#example3>.two{
+    background: hotpink;
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+#example3>.three{
+    background: indianred;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#example3>.four{
+    background: tomato;
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+#example3>.five{
+    background: skyblue;
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+            
+
+        
