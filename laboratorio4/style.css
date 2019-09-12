@@ -1,5 +1,8 @@
+body {
+  color: url("https://cdn.wallpapersafari.com/83/31/DBzikL.jpg");
+}
+
 div {
-  color: red;
   width: 80%;
   height: 100px;
 }
