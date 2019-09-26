@@ -4,5 +4,11 @@ elementos y cuantos de cada tipo. */
 var auno=['hola','dos'];
 
 function uno(auno){
-console.log(typeof auno);
+cont=0;
+for(i=0, i<auno.length;i++){
+if(typeof (auno[i])=='string'){
+    cont++;
+}
+}
+return cont;
 }
