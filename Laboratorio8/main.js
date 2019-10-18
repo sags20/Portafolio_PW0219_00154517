@@ -8,65 +8,61 @@ let serial = 0
 
 let carnet_regex = new RegExp("^[0-9]{8}$")
 
-let printArray = ()=>{
+let printArray = () => {
 
-     table_body.innerHTML = ""
+    table_body.innerHTML = ""
 
-    student_list.forEach(elem =>{
+    student_list.forEach(elem => {
         let new_row = document.createElement("tr")
         let datetime = new Date()
-        
+        let new_text = document.createElement("text")
         let new_cell = document.createElement("td")
         let new_btn = document.createElement("button")
-        let new_textbox = document.createElement("text")
         
-    
+
+
         new_row.classList.add("table-active")
         new_row.innerHTML = `<td>${elem.carnet}</td>
       <td>${elem.horario}</td>
       <td>${datetime.toLocaleString()}</td>
       <td>${elem.tarde}</td>`
-    
-    
-      new_btn.className = "btn btn-danger"
-      new_btn.innerText="eliminar"
-      new_btn.value= elem.id
-    
-      new_btn.addEventListener("click",event=>{
-          let id_actual=event.target.value
-          student_list.forEach((elem, pos)=>{
-              if(id_actual == elem.id){
-                  student_list.splice(pos, 1)
-                  printArray()
-              }
-          })
-      })
-    
-    
+
+
+        new_btn.className = "btn btn-danger"
+        new_btn.innerText = "eliminar"
+        new_btn.value = elem.id
+
+        new_btn.className = "form-control"
+
+        new_btn.addEventListener("click", event => {
+            let id_actual = event.target.value
+            student_list.forEach((elem, pos) => {
+                if (id_actual == elem.id) {
+                    student_list.splice(pos, 1)
+                    printArray()
+                }
+            })
+        })
+
         new_cell.appendChild(new_btn)
         new_row.appendChild(new_cell)
+        new_text.appendChild(new_text)
         tbody.appendChild(new_row)
     })
 
 }
+
 let addStudent = (carnet, schedule, late) => {
 
     student_list.push({
-       "id": serial,
-       "carnet":carnet,
-       "horario":schedule,
-       "tarde":late
-
+        "id": serial,
+        "carnet": carnet,
+        "horario": schedule,
+        "tarde": late
     })
- 
+
     serial++
-
 }
-
-
-
-
-
 
 let parseLateBool = (value) => {
 
