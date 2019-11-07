@@ -15,7 +15,6 @@ let printArray = () => {
     student_list.forEach(elem => {
         let new_row = document.createElement("tr")
         let datetime = new Date()
-        let new_text = document.createElement("text")
         let new_cell = document.createElement("td")
         let new_btn = document.createElement("button")
         
@@ -32,7 +31,6 @@ let printArray = () => {
         new_btn.innerText = "eliminar"
         new_btn.value = elem.id
 
-        new_btn.className = "form-control"
 
         new_btn.addEventListener("click", event => {
             let id_actual = event.target.value
@@ -46,7 +44,6 @@ let printArray = () => {
 
         new_cell.appendChild(new_btn)
         new_row.appendChild(new_cell)
-        new_text.appendChild(new_text)
         tbody.appendChild(new_row)
     })
 
